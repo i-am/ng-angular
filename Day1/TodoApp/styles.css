@@ -1,0 +1,72 @@
+/*selector and descriptor*/
+
+h1 {
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+}
+
+.todoInp{
+    margin-top: 5px;
+    width: 950px;
+    border-bottom: solid;
+    border-bottom-width: medium;
+    border-bottom-color: black;
+}
+
+div.inpDiv{
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
+    margin: 0 auto;
+}
+
+button.AddTodo{
+    width: 80px;
+}
+
+div.isDonefalse{
+
+    margin-top: 10px;
+    background-color: aquamarine;
+    height: 34px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+div.isDonetrue{
+
+    margin-top: 10px;
+    background-color: indianred;
+    text-decoration: line-through;
+    font-size: 20px;
+    height: 34px;
+    vertical-align: middle;
+}
+
+.close {
+    float: right;
+    margin-top: 5px;
+    content: "×";
+    color: red;
+    opacity: 1;
+}
+
+.btn {
+    float: right;
+    margin-right: 5%;
+}
+
+input[type='checkbox'].completeCheckbox {
+
+    float: left;
+    background-image: none;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin: 6px 50px 4px 5px;
+    fill: blue;
+    color:red;
+}
+
+.container {
+    min-width: 1200px;
+}
