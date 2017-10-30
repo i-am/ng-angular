@@ -1,0 +1,92 @@
+.topBar {
+  background-color: transparent;
+  font-family: arial,sans-serif;
+  display: inline;
+  /*overflow: auto;*/
+  float: right;
+  font-size: 13px;
+  padding-left: 30px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+.topBarLink {
+  color: black;
+  opacity: 0.75;
+  text-decoration: none;
+  vertical-align: middle;
+  padding-right: 15px;
+}
+
+.topBarLink:hover {
+  text-decoration: underline;
+}
+
+.image {
+  background-image: url("https://ssl.gstatic.com/gb/images/i2_2ec824b0.png");
+  background-size: 528px 68px;
+  display: inline-block;
+  background-position-x: -132px;
+  background-position-y: -38px;
+
+  background-repeat: no-repeat;
+
+  height: 30px;
+  width: 30px;
+  opacity: 0.55;
+  vertical-align: middle;
+  padding-right: 15px;
+}
+
+.image:hover {
+  opacity: 1;
+}
+
+.topBarApps {
+  display: block;
+  height: 30px;
+  width: 30px;
+}
+
+.signInBtn {
+  display: inline-block;
+  text-decoration: none;
+  background: -webkit-linear-gradient(top,#4387fd,#4683ea);
+  vertical-align: middle;
+  border: #4387fd 1px solid;
+  margin-right: 15px;
+  height: 30px;
+  width: 70px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.signIn {
+  line-height: 30px;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.signIn:hover {
+  cursor: default;
+}
+
+.tooltip {
+  display: inline-block;
+  visibility: hidden;
+  width: 80px;
+  height: 15px;
+  background-color: rgba(100%, 100%, 100%, 1);
+  opacity: 1;
+  color: #656565;
+  text-align: center;
+  outline: 1px solid #757575;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.14), 0 3px 6px rgba(0,0,0,0.20);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.image:hover .tooltip{
+  visibility: visible;
+}

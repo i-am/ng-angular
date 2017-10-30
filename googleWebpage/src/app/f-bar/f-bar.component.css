@@ -1,0 +1,42 @@
+.fBar {
+  position: fixed;
+  bottom: 0;
+  background-color: #f2f2f2;
+  border-top: 1px solid #e4e4e4;
+  display: inline-block;
+  overflow: auto;
+  width: 100%;
+  margin-left: -8px;
+}
+
+.leftBar {
+  float: left;
+  display: inline-block;
+}
+
+.rightBar {
+  float: right;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.fBarList {
+  display: inline-block;
+}
+
+.fBarItem {
+  display: inline;
+}
+
+.fBarLink {
+  font-family: arial,sans-serif;;
+  display: inline-block;
+  text-decoration: none;
+  color: #757575;
+  font-size: small;
+  padding-right: 20px;
+}
+
+.fBarLink:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,75 @@
+.searchDiv {
+  border: 1px #eaeaea solid;
+  line-height: 44px;
+  height: 44px;
+  width: 584px;
+  /*width: 40%;*/
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  font-family: arial, sans-serif;
+  font-size: small;
+}
+
+.searchDiv:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.14), 0 3px 6px rgba(0,0,0,0.20);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.searchBox:focus .searchDiv {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.14), 0 3px 6px rgba(0,0,0,0.20);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.searchBox:focus {
+  border: none;
+  outline: none;
+}
+
+.searchBox {
+  display: inline-block;
+  border: none;
+  border-width: 0px;
+  height: 34px;
+  width: 503px;
+  margin-left: 10px;
+  margin-right: auto;
+  line-height: 34px;
+  font-size: 16px;
+}
+
+.voiceSearch {
+  float: right;
+  background-image: url("../../assets/Google_microphone_logo.png");
+  background-size: 15px 23px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  width: 24px;
+  height: 44px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  margin-left: auto;
+}
+
+
+.voiceSearch:hover .tooltip {
+  cursor: pointer;
+  visibility: visible;
+}
+
+.tooltip {
+  display: inline-block;
+  visibility: hidden;
+  line-height: 15px;
+  height: 15px;
+  width: 130px;
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  margin-top: 50px;
+  margin-left: -50px;
+}
