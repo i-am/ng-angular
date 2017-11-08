@@ -1,0 +1,23 @@
+button {
+  border: none;
+  background-color: #444444;
+  float: right;
+  margin-left: 5px;
+  font-size: medium;
+}
+
+i {
+  vertical-align: middle;
+}
+
+.deleteBtn {
+  font-size: small;
+}
+
+.card{
+  width: 200%;
+}
+
+li {
+  margin-bottom: 30px;
+}

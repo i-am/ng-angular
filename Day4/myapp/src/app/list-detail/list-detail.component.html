@@ -1,0 +1,22 @@
+
+
+      <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <ul *ngFor="let item of items">
+              <li>
+                <b>{{item.name}}</b><br>
+                {{item.desc}}
+                <button class="deleteBtn" (click)="emitDelete(item.id)">
+                  <i class="material-icons">delete</i>
+                </button>
+                <button class="editBtn" (click)="emitEdit(item)">
+                  Edit
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+

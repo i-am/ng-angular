@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col s6">
+    <app-list-detail [Items]="items" (deleteEmitter)="deleteWidget($event)" (editEmitter)="editWidget($event)">
+    </app-list-detail>
+  </div>
+  <div class="col s6">
+    <app-list-input (addEmitter)="addWidget($event)" (updateEmitter)="updateWidget($event)"></app-list-input>
+  </div>
+</div>
