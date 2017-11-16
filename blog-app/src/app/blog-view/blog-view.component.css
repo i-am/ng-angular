@@ -1,0 +1,21 @@
+.blog-view-container {
+  display: block;
+  /*position: absolute;*/
+  padding-top: 88px;
+  color: #143447;
+  padding-left: 20px;
+  padding-right: 20px;
+  vertical-align: middle;
+}
+
+.blog-details {
+  margin-top: 10px;
+}
+
+i {
+  vertical-align: middle;
+}
+
+.card-author {
+  padding-right: 20px;
+}

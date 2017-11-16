@@ -1,0 +1,6 @@
+<div class="home-container">
+  <app-categories (categoryEmitter)="getCategory($event)" (searchEmitter)="filterSearch($event)"></app-categories>
+  <app-blog-list [category]="category" [searchStr]="searchStr"></app-blog-list>
+  <app-favourites *ngIf="isLoggedIn()"></app-favourites>
+</div>
+=

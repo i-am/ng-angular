@@ -1,0 +1,17 @@
+.blog-card {
+  display: inline-block;
+}
+
+.blog-list-container {
+  display: inline-block;
+  height: 100%;
+  padding-left: 230px;
+  margin-top: 63px;
+  width: 1200px;
+}
+
+h5 {
+   padding-top: 10px;
+   padding-left: 20px;
+   color: #254558
+}

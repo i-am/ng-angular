@@ -1,0 +1,16 @@
+<div class="nav-bar-container">
+  <!--searchbox-->
+    <div class="input-field">
+      <input type="text" [(ngModel)]="searchStr">
+      <i (click)="searchBlogs()" class="material-icons small">search</i>
+    </div>
+  <!--categories-filter-->
+  <h5>Categories</h5>
+  <ul class="sideNav" >
+    <li (click)="setCategory('All')" [ngClass]="{'active': currentActive === 'All'}"><a>All</a></li>
+    <li *ngFor="let category of categories" (click)="setCategory(category)" [ngClass]="{'active': currentActive === category}">
+      <a>{{category}}</a>
+    </li>
+  </ul>
+</div>
+

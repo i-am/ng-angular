@@ -1,0 +1,6 @@
+<div class="fav-container">
+  <label><h5>Favourites</h5></label><br>
+  <div  class="blog-card" *ngFor="let blog of sharedService.blogs" >
+    <app-blog-thumb *ngIf="isFavourite(blog.id)" [blog]="blog"></app-blog-thumb>
+  </div>
+</div>

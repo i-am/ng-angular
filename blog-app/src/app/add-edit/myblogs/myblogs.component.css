@@ -1,0 +1,23 @@
+.blog-card {
+  /*width: 50%;*/
+  float: right;
+}
+
+.my-blogs-container {
+  /*display: inline-block;*/
+  float: right;
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  /*width: 315px;*/
+  margin-top: 63px;
+  border-left: solid 5px #254558;
+  /*border-right: solid 5px #254558;*/
+}
+
+
+h5 {
+  padding-top: 10px;
+  padding-left: 20px;
+  color: #254558
+}

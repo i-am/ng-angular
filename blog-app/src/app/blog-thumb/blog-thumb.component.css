@@ -1,0 +1,49 @@
+.card {
+  margin-left: 10px;
+  margin-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  width: 280px;
+  background-color: #254558;
+  color: white;
+}
+
+.card-title {
+  text-align: center;
+}
+
+i {
+  vertical-align: bottom;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #2bbbad;
+}
+.fav-color {
+  color: #eb6e80;
+}
+
+.title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.icon-container {
+  color: white;
+  display: block;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.blog-details {
+  color: white;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}

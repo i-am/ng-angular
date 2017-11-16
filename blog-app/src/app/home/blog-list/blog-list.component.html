@@ -1,0 +1,9 @@
+<div class="blog-list-container">
+  <div class="section-title">
+  <label><h5>{{category}} Blogs</h5></label>
+  </div>
+  <br>
+  <div  class="blog-card" *ngFor="let blog of sharedService.blogs">
+    <app-blog-thumb *ngIf="(category === blog.category || category === 'All') && (isSubstringOf(blog.title))" [blog]="blog"></app-blog-thumb>
+  </div>
+</div>

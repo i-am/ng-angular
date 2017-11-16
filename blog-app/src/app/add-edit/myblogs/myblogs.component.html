@@ -1,0 +1,6 @@
+<div class="my-blogs-container">
+  <label><h5>My Blogs</h5></label><br>
+  <div  class="blog-card" *ngFor="let blog of sharedService.blogs" >
+    <app-blog-thumb *ngIf="isAuthor(blog.authorId)" [blog]="blog"></app-blog-thumb>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.form-container {
+  width: 50%;
+  margin-top: 5%;
+  margin-left: 8%;
+  margin-right: 8%;
+  display: inline-block;
+}
+
+.materialize-textarea {
+  height: 300px;
+}
+
+.view-container {
+  width: 1280px;
+}
+
+h5 {
+  padding-top: 10px;
+  /*padding-left: 20px;*/
+  color: #254558
+}

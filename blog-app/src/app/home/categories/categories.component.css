@@ -1,0 +1,62 @@
+.sideNav {
+  display: block;
+  background-color: #254558;
+  /*position: absolute;*/
+  /*height: 100%;*/
+}
+
+.nav-bar-container {
+  display: inline-block;
+  width: 200px;
+  background-color: #254558;
+  position: fixed;
+  height: 100%;
+  margin-top: 63px;
+  z-index: 999;
+}
+
+li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #143447;
+}
+
+h5 {
+  padding-top: 20px;
+  padding-left: 20px;
+  color: white;
+}
+
+li.active {
+  background-color: #2bbbad;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+i {
+  cursor: pointer;
+  vertical-align: middle;
+  color: white;
+  line-height: 50px;
+  padding-left: 0px !important;
+}
+
+
+.input-field {
+  padding-left: 10px;
+  display: inline-block;
+}
+
+input {
+  color: white;
+  width: 75% !important;
+  line-height: 15px;
+}

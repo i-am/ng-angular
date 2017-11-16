@@ -1,0 +1,20 @@
+.login-view{
+  /*width: 0%;*/
+  /*display: block;*/
+  background-color:#254558;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  width: 50%;
+  height: 50%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+label {
+  color: white;
+  font-size: medium;
+}

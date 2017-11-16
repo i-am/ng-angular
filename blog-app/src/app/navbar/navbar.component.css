@@ -1,0 +1,17 @@
+.nav-wrapper {
+  background-color: #254558;
+}
+
+nav {
+  position: fixed;
+  z-index: 999;
+}
+
+li a.active-link{
+  background-color: #2bbbad;
+}
+
+.brand-logo {
+  font-size: 25px;
+  padding-left: 10px;
+}

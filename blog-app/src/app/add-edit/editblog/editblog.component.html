@@ -1,0 +1,16 @@
+<div class="view-container">
+  <div class="form-container">
+    <h5>Edit Blog</h5>
+    <label>Title</label>
+    <input [(ngModel)]="title">
+    <label>Category</label>
+    <input list="categoryId" [(ngModel)]="category">
+    <datalist id="categoryId" >
+      <option *ngFor="let category of sharedService.categories">{{category}}</option>
+    </datalist>
+    <label>Content</label>
+    <textarea class="materialize-textarea" [(ngModel)]="body"></textarea>
+    <a class="waves-effect waves-light btn" (click)="updateBlog()">Update</a>
+  </div>
+  <app-myblogs></app-myblogs>
+</div>
