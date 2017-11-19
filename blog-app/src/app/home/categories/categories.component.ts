@@ -24,7 +24,6 @@ export class CategoriesComponent implements OnInit {
     this.categoryEmitter.emit(category);
   }
   searchBlogs() {
-    console.log(this.searchStr);
     this.searchEmitter.emit(this.searchStr);
   }
 }
