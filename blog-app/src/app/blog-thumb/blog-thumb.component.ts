@@ -1,8 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {UserService} from "../user.service";
-import {SharedService} from "../shared.service";
-import {BlogsService} from "../blogs.service";
-import {Router} from "@angular/router";
+import {Component, Input, OnInit} from '@angular/core';
+import {UserService} from '../services/user.service';
+import {SharedService} from '../services/shared.service';
+import {BlogsService} from '../services/blogs.service';
+
 
 @Component({
   selector: 'app-blog-thumb',
@@ -11,16 +11,15 @@ import {Router} from "@angular/router";
 })
 export class BlogThumbComponent implements OnInit {
   @Input() blog;
-  @Output() changeEvent: EventEmitter<number> = new EventEmitter<number>()
   author: string;
 
   constructor(private userService: UserService,
               private blogsService: BlogsService,
-              private sharedService: SharedService) { }
+              private sharedService: SharedService) {}
   ngOnInit() {
   }
   isFav() {
-    if (this.sharedService.isLoggedIn()) {
+    if (this.sharedService.isLoggedIn() && this.sharedService.currentUser) {
       for (let i = 0; i < this.sharedService.currentUser.favourites.length; i++) {
         if (this.blog.id === this.sharedService.currentUser.favourites[i]) {
           return true;
@@ -30,7 +29,7 @@ export class BlogThumbComponent implements OnInit {
     return false;
   }
   isAuthor() {
-    if (this.sharedService.isLoggedIn()) {
+    if (this.sharedService.isLoggedIn() && this.sharedService.currentUser) {
       if (this.blog.authorId === this.sharedService.currentUser.id) {
         return true;
       }
@@ -51,10 +50,8 @@ export class BlogThumbComponent implements OnInit {
     this.blogsService.deleteBlog(this.blog.id).subscribe((data) => {
       if (data) {
         this.sharedService.reloadBlogs();
-        this.changeEvent.emit(this.blog.id);
+        this.sharedService.handleDeleteBlog(this.blog.id);
       }
     });
-    // TODO: clear id from user favourites
-    this.sharedService.handleDeleteBlog(this.blog.id);
   }
 }

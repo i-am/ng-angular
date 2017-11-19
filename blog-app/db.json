@@ -7,7 +7,9 @@
       "name": "Frodo",
       "favourites": [
         1,
-        2
+        2,
+        5,
+        7
       ]
     },
     {
@@ -17,26 +19,39 @@
       "name": "Bilbo",
       "favourites": [
         1,
-        5
+        5,
+        6,
+        8
+      ]
+    },
+    {
+      "id": 3,
+      "username": "user3",
+      "password": "pass3",
+      "name": "Darth Vader",
+      "favourites": [
+        1,
+        2,
+        6
       ]
     }
   ],
   "Blogs": [
     {
-      "id": 1,
       "title": "Simple example of retrieving JSON feeds from Blogger Data API",
       "body": "This sample demonstrates displaying a list of recent posts from a blog hosted on Blogger Beta using the JSON output format provided by the Blogger Data API. This allows you to query a blog's public feed and get the resulting entries returned as JSON objects. To use the new JSON feed, create a script element whose src value is https://blogname.blogspot.com/feeds/posts/default?alt=json-in-script&callback=myFunc where blogname is the blog you want to retrieve, and myFunc is the name of your callback function that is passed the JSON object. For more information on JSON output support for Google Data APIs please see our JSON output support",
       "authorId": 1,
       "category": "Technology",
-      "postedOn": "February 4, 2016 10:13:00"
+      "postedOn": "February 4, 2016 10:13:00",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Review: Thor Ragnarok Is The Thor We’ve Been Waiting For",
+      "title": "Thor Ragnarok Is The Thor We’ve Been Waiting For",
       "body": "Thor Ragnarok is the third (and final?) installment for Thor in this phase of the Marvel Cinematic Universe. Thor has found himself imprisoned in a gladiatorial contest against his friend from work, The Hulk. He must fight and race against time to prevent the villain named Hela from destroying his home, Asgard.",
       "authorId": 2,
       "category": "Entertainment",
-      "postedOn": "February 4, 2016 10:13:00"
+      "postedOn": "February 4, 2016 10:13:00",
+      "id": 2
     },
     {
       "title": "You Can Stop Obsessing Over Expensive Quinoa And Switch To Desi Millets Instead",
@@ -63,20 +78,28 @@
       "id": 5
     },
     {
-      "title": "Remembering Dina",
-      "body": "Neither Indians nor Pakistanis quite forgave Dina Wadia for being Muhammad Ali Jinnah's daughter. The former made her life miserable through a protracted, mean-spirited grab for her father's house in",
-      "category": "Management",
-      "authorId": 2,
-      "postedOn": 1510779577417,
-      "id": 6
-    },
-    {
       "title": "5 Hollywood Movies That Revolutionised The Heist Genre",
       "body": "There's something about a good cinematic heist that's hard to resist. Who doesn't love watching the intense, painstaking planning undertaken by the would-be robbers, the sheer audacity of the crimes they commit (remember Tom Cruise infiltrating CIA HQ in Mission: Impossible?) and the eventual, and often bloody, meting out of justice at the end?\n\nWhile Hollywood has produced many great heist movies over the years, the following movies revolutionised the heist genre with storylines, characters and film-making techniques that surprised and shocked us. They brought us face to face with our own deeply-hidden greed or anger, and made us question our own morals. They also gave us brilliant insights into the human mind, character, and the values that define our changing times. Here are the top 5 Hollywood heist films.",
       "category": "Entertainment",
       "authorId": 2,
       "postedOn": 1510779713020,
       "id": 7
+    },
+    {
+      "title": "dsgd",
+      "body": "kb",
+      "category": "Technology",
+      "authorId": 3,
+      "postedOn": 1510829857554,
+      "id": 8
+    },
+    {
+      "title": "ZONES IN ANGULAR",
+      "body": "Zones are a perfect fit for Angular\nIt turns out that, the problem that Zones solve, plays very nicely with what Angular needs in order to perform change detection in our applications. Did you ever ask yourself when and why Angular performs change detection? What is it that tells Angular “Dude, a change probably occurred in my application. Can you please check?”.\nBefore we dive into these questions, let’s first think about what actually causes this change in our applications. Or rather, what can change state in our applications. Application state change is caused by three things:\nEvents - User events like click, change, input, submit, …\nXMLHttpRequests - E.g. when fetching data from a remote service\nTimers - setTimeout(), setInterval(), because JavaScript\nIt turns out that these three things have something in common. Can you name it? … Correct! They are all asynchronous.",
+      "category": "Technology",
+      "authorId": 2,
+      "postedOn": 1511115324790,
+      "id": 9
     }
   ]
 }

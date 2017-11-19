@@ -3,10 +3,10 @@
   <div class="nav-wrapper">
     <a class="brand-logo"><i>Hello, {{name}}. Welcome to BlogApp.</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a routerLink="/home" [routerLinkActive]="['active-link']">Home</a></li>
+      <li><a [routerLink]="['/home']" [routerLinkActive]="['active-link']">Home</a></li>
       <li *ngIf="isLoggedIn()"><a routerLink="/addblog" [routerLinkActive]="['active-link']">My Blogs</a></li>
       <li *ngIf="!isLoggedIn()"><a routerLink="/login" [routerLinkActive]="['active-link']">Login</a></li>
-      <li *ngIf="isLoggedIn()"><a (click)="logout()" routerLink="/login">Logout</a></li>
+      <li *ngIf="isLoggedIn()"><a (click)="logout()" [routerLink]="['/login']">Logout</a></li>
     </ul>
   </div>
 </nav>

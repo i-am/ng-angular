@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {UserService} from "../user.service";
-import {SharedService} from "../shared.service";
+import {UserService} from "../services/user.service";
+import {SharedService} from "../services/shared.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,11 +11,11 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
+  loginSuccess = true;
   constructor(private userService: UserService,
               private sharedService: SharedService,
               private router: Router) { }
   ngOnInit() {
-    localStorage.clear();
   }
   login() {
     const user = {
@@ -27,8 +27,10 @@ export class LoginComponent implements OnInit {
         if (data.length === 1) {
           localStorage.setItem('currentUser', data[0].id);
           this.sharedService.updateCurrentUser();
+          this.router.navigate(['/home']);
         } else {
           this.router.navigate(['/login']);
+          this.loginSuccess = false;
         }
       });
   }

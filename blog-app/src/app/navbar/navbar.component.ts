@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 // import {UserService} from '../user.service';
-import {SharedService} from '../shared.service';
-import {UserService} from "../user.service";
+import {SharedService} from '../services/shared.service';
+import {UserService} from "../services/user.service";
 
 @Component({
   selector: 'app-navbar',
@@ -9,19 +9,21 @@ import {UserService} from "../user.service";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  name = 'Guest';
+  name: string;
   constructor(public sharedService: SharedService,
-              public userService: UserService) {}
+              public userService: UserService) { this.name = 'Guest'; }
   isLoggedIn() {
     if (this.sharedService.isLoggedIn()) {
-      this.name = this.sharedService.currentUser.name;
-      return true;
+      if (this.name && this.sharedService.currentUser) {
+        this.name = this.sharedService.currentUser.name;
+        return true;
+      }
     }
     return false;
   }
 
   logout() {
-    this.userService.logout()
+    this.userService.logout();
     this.sharedService.updateCurrentUser();
     this.name = 'Guest';
   }

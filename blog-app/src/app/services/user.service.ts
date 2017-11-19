@@ -17,6 +17,10 @@ export class UserService {
   logout() {
     localStorage.removeItem('currentUser');
   }
+  getAllUsers() {
+    return this.http.get(BASE_URL)
+      .map(res => res.json());
+  }
   getUserById(id) {
     return this.http.get(BASE_URL + '?id=' + id)
       .map(res => res.json());

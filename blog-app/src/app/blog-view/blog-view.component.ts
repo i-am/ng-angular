@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {BlogsService} from "../blogs.service";
-import {UserService} from "../user.service";
-import {SharedService} from "../shared.service";
+import {BlogsService} from "../services/blogs.service";
+import {UserService} from "../services/user.service";
+import {SharedService} from "../services/shared.service";
 
 @Component({
   selector: 'app-blog-view',
@@ -14,27 +14,28 @@ export class BlogViewComponent implements OnInit {
   body: string;
   author: string;
   postedOn: number;
+  id: number;
+  sub: any;
   constructor(private activatedRoute: ActivatedRoute,
               private blogsService: BlogsService,
-              private userService: UserService,
-              private sharedService: SharedService) { }
+              private userService: UserService) { }
 
   ngOnInit() {
-    this.getBlogByUrl();
+    this.sub = this.activatedRoute.params.subscribe( params => {
+      this.id = +params['id'];
+      console.log(this.id);
+      this.getBlogByUrl();
+    });
   }
   getBlogByUrl() {
-    let id = this.activatedRoute.snapshot.params['id?'];
-    this.blogsService.getBlogById(id).subscribe((data) => {
+    this.blogsService.getBlogById(this.id).subscribe((data) => {
       if (data.length === 1) {
         this.title = data[0].title;
-        // this.blog.category = data[0].category;
         this.body = data[0].body;
         this.postedOn = data[0].postedOn;
         this.userService.getUserById(data[0].authorId).subscribe( userData => {
           if (userData) {
             this.author = userData[0].name;
-            console.log(userData);
-            console.log(this.author);
           }
         });
       }

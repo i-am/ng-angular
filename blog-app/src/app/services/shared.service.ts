@@ -1,4 +1,4 @@
-import {AfterViewInit, Injectable, OnInit} from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {UserService} from './user.service';
 import {BlogsService} from './blogs.service';
 
@@ -27,7 +27,8 @@ export class SharedService implements OnInit {
   blogs: Blog[] = new Array<Blog>();
 
   constructor(private userService: UserService,
-              private blogsService: BlogsService) { }
+              private blogsService: BlogsService) {}
+
   ngOnInit() {
     this.updateCurrentUser();
     this.reloadBlogs();
@@ -39,6 +40,7 @@ export class SharedService implements OnInit {
     }
     return false;
   }
+
   updateCurrentUser() {
     if (this.isLoggedIn()) {
       let id = localStorage.getItem('currentUser');
@@ -64,22 +66,17 @@ export class SharedService implements OnInit {
     });
   }
 
-  postBlog(blog) {
-    this.blogsService.postBlog(blog)
-      .subscribe( (data) => {
-        if (data) {
-          this.reloadBlogs();
-        }
-      });
-  }
-  // TODO: remove deleted blog from favourites
+  // remove deleted blog from favourites
   handleDeleteBlog(id) {
-  }
-
-  updateBlog(blogData) {
-    this.blogsService.updateBlog(blogData)
-      .subscribe(data => {
-        this.reloadBlogs();
+    this.userService.getAllUsers()
+      .subscribe(users => {
+        for (let i = 0; i < users.length; i++) {
+          let index = users[i].favourites.findIndex(x => x === id);
+          if (index > -1) {
+            users[i].favourites.splice(index, 1);
+            this.userService.updateUserData(users[i]).subscribe();
+          }
+        }
       });
   }
   getAuthor(blog) {

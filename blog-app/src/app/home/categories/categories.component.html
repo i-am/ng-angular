@@ -1,7 +1,7 @@
 <div class="nav-bar-container">
   <!--searchbox-->
     <div class="input-field">
-      <input type="text" [(ngModel)]="searchStr">
+      <input type="text" [(ngModel)]="searchStr" (ngModelChange)="searchBlogs($event)" placeholder="Search by title">
       <i (click)="searchBlogs()" class="material-icons small">search</i>
     </div>
   <!--categories-filter-->

@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {SharedService} from "../../shared.service";
-import {BlogsService} from "../../blogs.service";
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {SharedService} from '../../services/shared.service';
+import {BlogsService} from '../../services/blogs.service';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-addblog',
@@ -8,16 +9,16 @@ import {BlogsService} from "../../blogs.service";
   styleUrls: ['./addblog.component.css']
 })
 export class AddblogComponent implements OnInit {
-  // categories: string[];
 
   title: string;
   category: string;
   body: string;
 
-  constructor(public sharedService: SharedService, private blogsService: BlogsService) { }
+  constructor(public sharedService: SharedService,
+              private blogsService: BlogsService,
+              public toastr: ToastsManager, vcr: ViewContainerRef) { this.toastr.setRootViewContainerRef(vcr); }
 
   ngOnInit() {
-    // this.categories = this.sharedService.categories;
   }
   postBlog() {
     let blog = {
@@ -27,9 +28,25 @@ export class AddblogComponent implements OnInit {
       authorId: this.sharedService.currentUser.id,
       postedOn: (new Date()).getTime()
     };
-    this.sharedService.postBlog(blog);
+    this.blogsService.postBlog(blog)
+      .subscribe( (data) => {
+        if (data) {
+          this.showSuccess();
+          this.sharedService.reloadBlogs();
+        }
+      });
     this.title = '';
     this.category = '';
     this.body = '';
+  }
+
+  showSuccess() {
+    this.toastr.success('New blog added!',
+                        ' Add Success!',
+                        {toastLife: 3000,
+                          positionClass: 'toast-top-right',
+                          titleClass: 'success-title',
+                          messageClass: 'success-msg',
+                          animate: 'fade'});
   }
 }
