@@ -1,0 +1,21 @@
+.navbar {
+  background-color: black;
+  color: white;
+  overflow: auto;
+}
+
+a.navbar-title {
+  float: left;
+  color: yellow;
+}
+
+.nav-list {
+  display: inline;
+  color: red;
+}
+
+.nav-list-elements {
+  display: inline;
+  float:right;
+  color: red;
+}

@@ -100,6 +100,14 @@
       "authorId": 2,
       "postedOn": 1511115324790,
       "id": 9
+    },
+    {
+      "title": "test",
+      "body": "test",
+      "category": "Medicine",
+      "authorId": 1,
+      "postedOn": 1511117350429,
+      "id": 10
     }
   ]
 }

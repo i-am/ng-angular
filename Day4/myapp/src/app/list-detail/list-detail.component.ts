@@ -8,7 +8,7 @@ import {WidgetFirstService} from "../widget-first.service"
 })
 export class ListDetailComponent{
   @Input('Items') items;
-  @Output() deleteEmitter: EventEmitter<any> = new EventEmitter<any>();
+  @Output() deleteEmitter: EventEmitter<number> = new EventEmitter<number>();
   @Output() editEmitter: EventEmitter<any> = new EventEmitter<any>();
   emitDelete(id) {
     this.deleteEmitter.emit(id);

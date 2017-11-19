@@ -1,0 +1,12 @@
+<div class="container">
+  <ul class="list">
+    <li *ngFor="let item of menuItems">
+      <app-nav-bar-items [menuItem]="item" (click)="select(item.item)"></app-nav-bar-items>
+    </li>
+  </ul>
+</div>
+<div>
+  <div *ngFor="let item of menuItems">
+    <app-nav-bar-des [menuItem]="item" *ngIf="selected == item.item"></app-nav-bar-des>
+  </div>
+</div>

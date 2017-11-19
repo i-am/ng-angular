@@ -25,6 +25,8 @@ export class ListInputComponent {
         desc: this.inpDesc,
       };
       this.addEmitter.emit(widget);
+      this.inpName = '';
+      this.inpDesc = '';
     } else {
       let widget = {
         name: this.inpName,

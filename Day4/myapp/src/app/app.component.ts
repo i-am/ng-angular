@@ -20,27 +20,26 @@ export class AppComponent implements OnInit {
 
   constructor(private request: WidgetFirstService) {}
   ngOnInit() {
+    this.RefreshWidget();
+  }
+  RefreshWidget() {
     this.request.loadData()
       .subscribe((data) => {
         this.items = data;
       });
   }
   addWidget(event) {
-    this.request.postData(event)
-      .subscribe(data => {
-        this.request.loadData()
-          .subscribe((data1) => {
-            this.items = data1;
-          });
-      });
+    if (event.name.length > 0) {
+      this.request.postData(event)
+        .subscribe(data => {
+          this.RefreshWidget();
+        });
+    }
   }
   deleteWidget(event) {
     this.request.deleteData(event)
       .subscribe(data => {
-        this.request.loadData()
-          .subscribe((data1) => {
-            this.items = data1;
-          });
+        this.RefreshWidget();
       });
   }
   editWidget(event) {
@@ -52,11 +51,7 @@ export class AppComponent implements OnInit {
   updateWidget(event) {
     this.request.updateData(event)
       .subscribe(data => {
-        this.request.loadData()
-          .subscribe((data1) => {
-            this.items = data1;
-          });
+        this.RefreshWidget();
       });
   }
-
 }
