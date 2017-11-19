@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
     this.category = 'All';
   }
   getCategory(event) {
-    console.log(event);
     this.category = event;
   }
   isLoggedIn() {
