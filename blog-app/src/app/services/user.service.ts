@@ -3,7 +3,8 @@ import {Http, Headers} from "@angular/http";
 import "rxjs/add/operator/map";
 import {RouterModule} from "@angular/router";
 
-const BASE_URL = 'http://localhost:3000/Users';
+// const BASE_URL = 'http://localhost:3000/Users';
+const BASE_URL = 'https://blooming-crag-28390.herokuapp.com/Users';
 const header = {headers: new Headers({'Content-Type': 'application/json'})};
 
 @Injectable()

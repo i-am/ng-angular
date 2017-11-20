@@ -1,10 +1,10 @@
 <div class="card">
-  <div class = "icon-container" *ngIf="isAuthor()">
+  <div class = "icon-container" *ngIf="sharedService.isLoggedIn()">
     <i *ngIf="!isFav()" (click)="toggleFav()" class="right tiny material-icons">favorite_border</i>
     <i *ngIf="isFav()" (click)="toggleFav()" class="right tiny material-icons fav-color">favorite</i>
 
-    <a [routerLink]="['/editblog', blog.id]"><i class="right tiny material-icons">mode_edit</i></a>
-    <i (click)="deleteBlog()" class="right tiny material-icons">delete</i>
+    <a *ngIf="isAuthor()" [routerLink]="['/editblog', blog.id]"><i class="right tiny material-icons">mode_edit</i></a>
+    <i *ngIf="isAuthor()" (click)="deleteBlog()" class="right tiny material-icons">delete</i>
   </div>
   <span class="card-title"><a [routerLink]="['/blog', blog.id]"> {{blog.title}} </a></span>
   <div class="blog-details">

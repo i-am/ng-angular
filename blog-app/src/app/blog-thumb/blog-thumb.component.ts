@@ -15,7 +15,7 @@ export class BlogThumbComponent implements OnInit {
 
   constructor(private userService: UserService,
               private blogsService: BlogsService,
-              private sharedService: SharedService) {}
+              public sharedService: SharedService) {}
   ngOnInit() {
   }
   isFav() {
